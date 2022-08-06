@@ -1,0 +1,312 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/breakpoints.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__sidenav {
+    height: 100vh;
+    position: fixed;
+    overflow: scroll;
+    padding: 1rem 0;
+    ul, 
+    .nk__sidenav__group {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        button {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            font-size: 1rem;
+            position: relative;
+            span {
+                position: absolute;
+                right: 1rem;
+                top: 0.8rem;
+            }
+        }
+        ul {
+            position: relative;
+            // &::before {
+            //     position: absolute;
+            //     left: 1.5rem;
+            //     content: "";
+            //     border-left: 2px solid white;
+            //     height: 100%;
+            // }
+        }
+    }
+    ul {
+        gap: 0.5rem;
+    }
+
+    
+    //Blue Theme
+    &.nk__blue__theme {
+        background-color: color(blue, 800);
+        .nk__sidenav__group {
+            a,
+            button {
+                color: color(blue, 100);
+                background-color: color(blue, 800);
+                .nk__icon {
+                    fill: color(blue, 100);
+                }
+                &:hover {
+                    color: color(blue, 800);
+                    background-color: color(blue, 200);
+                    .nk__icon {
+                        fill: color(blue, 800);
+                    }
+                }
+                i {
+                    color: color(blue, 100);
+                }
+                &:hover {
+                    i {
+                        color: color(blue, 800);
+                    }
+                }
+            }
+        }
+        .nk__sidenav__element {
+            a {
+                color: color(blue, 100);
+                background-color: color(white, 800);
+                &:hover {
+                    color: color(blue, 800);
+                    background-color: color(blue, 200);
+                }
+            }
+        }
+        .nk__sidenav__element--active {
+            a {
+                color: color(blue, 700);
+                background-color: color(white, base);
+                &:hover {
+                    background-color: color(white, base);
+                }
+            }
+        }
+    }
+    
+    // Purple Theme 
+    &.nk__purple__theme {
+        background-color: color(purple, 800);
+        .nk__sidenav__group {
+            button {
+                color: color(purple, 100);
+                background-color: color(purple, 800);
+                .nk__icon {
+                    fill: color(purple, 100);
+                }
+                &:hover {
+                    color: color(purple, 800);
+                    background-color: color(purple, 200);
+                    .nk__icon {
+                        fill: color(purple, 800);
+                    }
+                }
+                i {
+                    color: color(purple, 100);
+                }
+                &:hover {
+                    i {
+                        color: color(purple, 800);
+                    }
+                }
+            }
+        }
+        a,
+        button {
+            color: color(purple, 100);
+            background-color: color(purple, 800);
+            &:hover {
+                color: color(purple, 800);
+                background-color: color(purple, 200);
+            }
+        }
+        .nk__sidenav__element--active {
+            a, button {
+                color: color(purple, 700);
+                background-color: color(white, base);
+                &:hover {
+                    color: color(purple, 800);
+                    background-color: color(white, 200);
+                }
+            }
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        background-color: color(green, 800);
+        .nk__sidenav__group {
+            button {
+                color: color(green, 100);
+                background-color: color(green, 800);
+                .nk__icon {
+                    fill: color(green, 100);
+                }
+                &:hover {
+                    color: color(green, 800);
+                    background-color: color(green, 200);
+                    .nk__icon {
+                        fill: color(green, 800);
+                    }
+                }
+                i {
+                    color: color(green, 100);
+                }
+                &:hover {
+                    i {
+                        color: color(green, 800);
+                    }
+                }
+            }
+        }
+        a,
+        button {
+            color: color(green, 100);
+            background-color: color(green, 800);
+            &:hover {
+                color: color(green, 800);
+                background-color: color(green, 200);
+            }
+        }
+        .nk__sidenav__element--active {
+            a {
+                color: color(green, 700);
+                background-color: color(white, base);
+                &:hover {
+                    color: color(green, 800);
+                    background-color: color(white, 200);
+                }
+            }
+        }
+    }
+
+
+    // Breakpoints
+    
+    @include mobile {
+        display: none;
+    }
+
+    @include tablet {
+        width: 3rem;
+        .nk__sidenav__group,
+        .nk__sidenav__element {
+            a, button {
+                padding: 1rem 0;
+                justify-content: center;
+                span {
+                    margin: 0;
+                }
+                div {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    @include desktop {
+        width: 14rem;
+        .nk__sidenav__group,
+        .nk__sidenav__element {
+            a, button {
+                padding: 1rem 1rem;
+                margin-left: 2rem;
+                justify-content: flex-start;
+                div {
+                    display: flex;
+                }
+                span {
+                    height: 1rem;
+                    width: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.nk__sidenav__element,
+.nk__sidenav__group {
+    display: flex;
+    width: 100%;
+    position: relative;
+    a, button {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        width: calc(100% - 2rem);
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        display: flex;
+        justify-content: left;
+        align-items: center ;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+        }
+        // &:focus {
+        //     @include inner-focus;
+        // }
+    }
+    i {
+        font-size: 1.5rem;
+    }
+    button {
+        justify-content: space-between;
+    }
+    ul {
+        display: none;
+        &[aria-expanded="true"] {
+            display: flex;
+        }
+    }
+}
+
+.nk__sidenav__group {
+    .nk__sidenav__element {
+        z-index: 1;
+        a {
+            padding-left: 2rem;
+        }
+    }
+}
+
+.nk__sidenav__element--active {
+    z-index: 2;
+    a {
+        &::after{
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            bottom: -2rem;
+            right: 0;
+            height: 2rem;
+            width: 1rem;
+            border-top-right-radius: 1rem;
+            box-shadow: 0 -1rem 0 0 color(white, base);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: -2rem;
+            right: 0;
+            height: 2rem;
+            width: 1rem;
+            border-bottom-right-radius: 1rem;
+            box-shadow: 0 1rem 0 0 color(white, base);
+        }
+    }
+}

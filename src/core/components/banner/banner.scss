@@ -1,0 +1,135 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+
+.nk__banner__action {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 1rem;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    &:hover {
+        cursor: pointer;
+        @include shadow-elegant;
+    }
+}
+
+.nk__banner {
+    @include shadow-elegant;
+    min-height: 1rem;
+    position: absolute;
+    width: calc(100% - 6rem);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    align-items: center;
+    top: 1rem;
+    font-size: 0.9rem;
+
+    //Blue Theme
+    &.nk__blue__theme {
+        .nk__banner__action {
+            color: color(blue, 600);
+            &:hover {
+                background-color: rgba(color(blue, 100), 0.5);
+                color: color(blue, 600);
+            }
+            &:active {
+                background-color: rgba(color(blue, 200), 0.5);
+                color: color(blue, 600);
+            }
+        }
+        &.nk__banner--primary {
+            background-color: color(blue, 800);
+            color: color(white, base);
+            .nk__banner__action {
+                color: color(white, base);
+                &:hover {
+                    background-color: color(blue, 100);
+                    color: color(blue, 800);
+                }
+                &:active {
+                    background-color: color(blue, 200);
+                    color: color(blue, 800);
+                }
+            }
+        }
+    }
+
+    //Purple Theme
+    &.nk__purple__theme {
+        .nk__banner__action {
+            color: color(purple, 600);
+            &:hover {
+                background-color: rgba(color(purple, 100), 0.5);
+                color: color(purple, 600);
+            }
+            &:active {
+                background-color: rgba(color(purple, 200), 0.5);
+                color: color(purple, 600);
+            }
+        }
+        &.nk__banner--primary {
+            background-color: color(purple, 800);
+            color: color(white, base);
+            .nk__banner__action {
+                color: color(white, base);
+                &:hover {
+                    background-color: color(purple, 100);
+                    color: color(purple, 800);
+                }
+                &:active {
+                    background-color: color(purple, 200);
+                    color: color(purple, 800);
+                }
+            }
+        }
+    }
+
+    //Green Theme
+    &.nk__green__theme {
+        .nk__banner__action {
+            color: color(green, 600);
+            &:hover {
+                background-color: rgba(color(green, 100), 0.5);
+                color: color(green, 600);
+            }
+            &:active {
+                background-color: rgba(color(green, 200), 0.5);
+                color: color(green, 600);
+            }
+        }
+        &.nk__banner--primary {
+            background-color: color(green, 800);
+            color: color(white, base);
+            .nk__banner__action {
+                color: color(white, base);
+                &:hover {
+                    background-color: color(green, 100);
+                    color: color(green, 800);
+                }
+                &:active {
+                    background-color: color(green, 200);
+                    color: color(green, 800);
+                }
+            }
+        }
+    }
+}
+
+.nk__banner--top {
+    top: 1rem;
+    bottom: unset;
+}
+
+.nk__banner--bottom {
+    top: unset;
+    bottom: 1rem;
+}
+

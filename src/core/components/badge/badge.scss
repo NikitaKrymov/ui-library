@@ -1,0 +1,58 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__badge {
+    // Blue Theme
+    &.nk__blue__theme {
+        background-color: color(blue, 700);
+        color: color(white, base);
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        background-color: color(purple, 700);
+        color: color(white, base);
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        background-color: color(green, 700);
+        color: color(white, base);
+    }
+}
+
+.nk__badge__center {
+    &:hover {
+        cursor: default;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
+}
+
+.nk__badge--sm {
+    height: 1rem;
+}
+
+.nk__badge--md {
+    height: 1.3rem;
+}
+
+.nk__badge--lg {
+    height: 1.6rem;
+}
+
+.nk__badge__corner {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem;
+    top: -0.4rem;
+    right: -0.4rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+}

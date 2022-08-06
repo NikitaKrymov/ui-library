@@ -1,0 +1,39 @@
+@use "../../scss/mixins/shadow.scss" as *;
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .nk__accordion__button {
+        @include shadow-elegant;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.5rem;
+        border: none;
+        outline: none;
+        background-color: color(white, base);
+        :first-child {
+            padding-right: 0.5rem;
+        }
+        color: color(grey, 500);
+        &:hover {
+            cursor: pointer;
+        }
+        // &:focus {
+        //     @include inner-focus;
+        // }
+    }
+}
+
+.nk__accordion__content {
+    padding: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: color(grey, 700);
+    display: none;
+    &[aria-expanded="true"] {
+        display: flex;
+    }
+}

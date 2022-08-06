@@ -1,0 +1,15 @@
+
+@use "../../../core/scss/color-palette.scss" as *;
+
+.nk__ui-lib__story__block__props__row {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    color: color(grey, 500);
+    border-bottom: 1px solid color(grey, 100);
+    align-items: center;
+    :last-child {
+        margin-left: 0.5rem;
+    }
+}

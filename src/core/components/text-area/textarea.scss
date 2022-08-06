@@ -1,0 +1,71 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        margin-bottom: 0.2rem;
+        color: color(grey, 700);
+    }
+
+    textarea {
+        padding: 0.5rem 0.5rem;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid color(grey, 500);
+    }
+
+    .nk__textarea__helper-text {
+        margin-top: 0.2rem;
+        color: color(grey, 500);
+    }
+    
+    &:focus-within {
+        &.nk__blue__theme {
+            label {
+                color: color(blue, 500);
+            }
+            textarea {
+                border-color: color(blue, 500);
+            }
+        }
+
+        &.nk__purple__theme {
+            label {
+                color: color(purple, 500);
+            }
+            textarea {
+                border-color: color(purple, 500);
+            }
+        }
+    
+        &.nk__green__theme {
+            label {
+                color: color(green, 500);
+            }
+            textarea {
+                border-color: color(green, 500);
+            }
+        }
+    }
+}
+
+.nk__textarea--sm {
+    textarea {
+        height: 3rem;
+    }
+}
+
+.nk__textarea--md {
+    textarea {
+        height: 6rem;
+    }
+}
+
+.nk__textarea--lg {
+    textarea {
+        height: 9rem;
+    }
+};

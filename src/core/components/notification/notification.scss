@@ -1,0 +1,54 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+@use "../../scss/mixins/breakpoints.scss" as *;
+@use "../../scss/animations/showup.scss" as *;
+
+.nk__notification {
+    @include shadow-elegant;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: color(white, base);
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 4px;
+    i {
+        font-size: 0.8rem;
+    }
+    z-index: 10;
+
+    @include desktop {
+        min-height: 20%;
+        overflow: hidden;
+        padding: 1rem;
+        width: 20%;
+        &[aria-expanded="false"] {
+            display: none;
+        }
+        &[aria-expanded="true"] {
+            animation: show 0.1s linear;
+        }
+    }
+}
+
+.nk__notification__header {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.nk__notification__content {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    color: color(grey, 500);
+}
+
+@keyframes show {
+   0% {
+       right: -30%;
+   } 
+   100% {
+       right: 0%;
+   }
+}

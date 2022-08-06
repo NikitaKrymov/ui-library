@@ -1,0 +1,28 @@
+@use "./core/scss/mixins/breakpoints.scss" as *;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.nk__ui-lib {
+    display: grid;
+
+    /// Breakpoints for spliting window with navigation menu
+    @include mobile {
+        grid-template-columns: 0 auto;
+    }
+
+    @include tablet {
+        grid-template-columns: 3rem auto;
+    }
+
+    @include desktop {
+        grid-template-columns: 14rem auto;
+    }
+}
+
+.nk__ui-lib__window {
+    display: flex;
+    padding: 1rem;
+}

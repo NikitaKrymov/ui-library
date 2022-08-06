@@ -1,0 +1,192 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+
+.nk__radio-button__fieldset {
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    legend {
+        margin-bottom: 0.2rem;
+        color: color(grey, 700);
+    }
+
+    // .nk__radio-button {
+        // &:focus-within {
+        //     @include inner-focus;
+        // }
+    // }
+
+    // Blue Theme
+    &.nk__blue__theme {
+        input[type="radio"] {
+            &::before {
+                background-color: color(blue, 500);
+            }
+            &:checked {
+                border-color: color(blue, 500);
+                &::before {
+                    transform: scale(1);
+                }
+            }
+            &:hover:not(:checked) {
+                border-color: color(blue, 200);
+                &::before {
+                    transform: scale(1);
+                    transition: 0;
+                    background-color: color(blue, 100);
+                }
+            }
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        input[type="radio"] {
+            &::before {
+                background-color: color(purple, 500);
+            }
+            &:checked {
+                border-color: color(purple, 500);
+                &::before {
+                    transform: scale(1);
+                }
+            }
+            &:hover:not(:checked) {
+                border-color: color(purple, 200);
+                &::before {
+                    transform: scale(1);
+                    transition: 0;
+                    background-color: color(purple, 100);
+                }
+            }
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        input[type="radio"] {
+            &::before {
+                background-color: color(green, 600);
+            }
+            &:checked {
+                border-color: color(green, 600);
+                &::before {
+                    transform: scale(1);
+                }
+            }
+            &:hover:not(:checked) {
+                border-color: color(green, 100);
+                &::before {
+                    transform: scale(1);
+                    transition: 0;
+                    background-color: color(green, 100);
+                }
+            }
+        }
+    }
+}
+
+.nk__radio-button {
+    padding: 0.2rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    :hover {
+        cursor: pointer;
+    }    
+    label {
+        padding-left: 0.5rem;
+    }
+
+    input[type="radio"] {
+        appearance: none;
+        display: grid;
+        place-content: center;
+        border-radius: 50%;
+        border: 1px solid color(grey, 500);
+        margin-bottom: 0.1rem;
+        &::before {
+            content: "";
+            transform: scale(0);
+            border-radius: 50%;
+            transition: 10ms transform ease-in-out;
+        }
+        &:checked {
+            &::before {
+                transform: scale(1);
+            }
+        }
+        &:disabled {
+            &::before {
+                background-color: color(grey, 300);
+            }
+        }
+    }
+    
+    &.nk__radio-button--disabled {
+        :hover {
+            cursor: not-allowed;
+        }
+        label {
+            color: color(grey, 300);
+        }
+        input[type="radio"]:disabled {
+            border-color: color(grey, 300);
+            &::before {
+                background-color: transparent;
+            }
+            &:hover {
+                border-color: color(grey, 300);
+                &::before {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.nk__radio-button__fieldset--vertical {
+    flex-direction: column;
+}
+
+.nk__radio-button__fieldset--sm {
+    .nk__radio-button {
+        input[type="radio"] {
+            width: 1rem;
+            height: 1rem;
+            &::before {
+                height: 0.5rem;
+                width: 0.5rem;
+            }
+        }
+    }
+}
+
+.nk__radio-button__fieldset--md {
+    .nk__radio-button {
+        input[type="radio"] {
+            width: 1.3rem;
+            height: 1.3rem;
+            &::before {
+                height: 0.75rem;
+                width: 0.75rem;
+            }
+        }
+    }
+}
+
+.nk__radio-button__fieldset--lg {
+    .nk__radio-button {
+        input[type="radio"] {
+            width: 1.6rem;
+            height: 1.6rem;
+            &::before {
+                height: 0.95rem;
+                width: 0.95rem;
+            }
+        }
+    }
+}

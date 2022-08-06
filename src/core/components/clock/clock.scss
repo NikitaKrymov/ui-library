@@ -1,0 +1,104 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+
+.nk__clock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr 0.5fr 1fr 1fr;
+    justify-content: space-between;
+    border-radius: 0.25rem;
+    grid-gap: 0.2rem;
+
+    //Blue Theme
+    &.nk__blue__theme {
+        .nk__clock__card {
+            background-color: color(blue, 400);
+            color: color(white, base);
+        }
+        &.nk__clock--primary {
+            .nk__clock__card {
+                background-color: transparent;
+                color: color(blue, 700);
+            }
+        }
+    }
+
+    //Purple Theme
+    &.nk__purple__theme {
+        .nk__clock__card {
+            background-color: color(purple, 400);
+            color: color(white, base);
+        }
+        &.nk__clock--primary {
+            .nk__clock__card {
+                background-color: transparent;
+                color: color(purple, 700);
+            }
+        }
+    }
+
+    //Green Theme
+    &.nk__green__theme {
+        .nk__clock__card {
+            background-color: color(green, 400);
+            color: color(white, base);
+        }
+        &.nk__clock--primary {
+            .nk__clock__card {
+                background-color: transparent;
+                color: color(green, 700);
+            }
+        }
+    }
+}
+
+.nk__clock__card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    // animation: anim 1s infinite;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 50%;
+}
+
+.nk__clock__divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nk__clock--sm {
+    height: 2rem;
+}
+
+.nk__clock--md {
+    height: 2.5rem;
+    .nk__clock__card {
+        width: 1rem;
+        font-size: 0.9rem;
+    }
+    .nk__clock__divider {
+        font-size: 1rem;
+    }
+}
+
+.nk__clock--lg {
+    height: 3rem;
+    .nk__clock__card {
+        width: 1.2rem;
+        font-size: 1rem;
+    }
+    .nk__clock__divider {
+        font-size: 1rem;
+    }
+}
+
+@keyframes anim {
+    from {
+        height: 50%;
+    }
+    to {
+        height: 100%;
+    }
+}

@@ -1,0 +1,87 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        margin-bottom: 0.2rem;
+        color: color(grey, 700);
+    }
+
+    input {
+        padding: 0.2rem 0.5rem;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid color(grey, 500);
+    }
+
+    .nk__input__helper-text {
+        margin-top: 0.2rem;
+        color: color(grey, 500);
+    }
+    
+    &:focus-within {
+        &.nk__blue__theme {
+            label {
+                color: color(blue, 500);
+            }
+            input {
+                border-color: color(blue, 500);
+                color: color(grey, 700);
+            }
+        }
+
+        &.nk__purple__theme {
+            label {
+                color: color(purple, 500);
+            }
+            input {
+                border-color: color(purple, 500);
+                color: color(grey, 700);
+            }
+        }
+    
+        &.nk__green__theme {
+            label {
+                color: color(green, 500);
+            }
+            input {
+                border-color: color(green, 500);
+                color: color(grey, 700);
+            }
+        }
+    }
+
+
+    &.nk__input--disabled {
+        > *:hover {
+            cursor: not-allowed !important;
+        }
+        label {
+            color: color(grey, 300);
+        }
+        input {
+            border-color: color(grey, 300);
+        }
+    }
+}
+
+.nk__input--sm {
+    input, span {
+        height: 1.2rem;
+    }
+}
+
+.nk__input--md {
+    input, span {
+        height: 1.5rem;
+    }
+}
+
+.nk__input--lg {
+    input, span {
+        height: 2rem;
+    }
+}

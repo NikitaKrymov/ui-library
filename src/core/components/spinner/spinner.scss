@@ -1,0 +1,55 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__spinner {
+    height: 2rem;
+    width: 2rem;
+    border: 0.3rem solid color(gray, 100);
+    border-top: 0.5rem solid color(blue, 800);
+    animation: spin 1s infinite linear;
+    border-radius: 50%;
+
+    //Blue Theme 
+    &.nk__blue__theme {
+        border-top-color: color(blue, 800);
+
+    }
+
+    //Purple Theme 
+    &.nk__purple__theme {
+        border-top-color: color(purple, 800);
+    }
+
+    //Green Theme 
+    &.nk__green__theme {
+        border-top-color: color(green, 800);
+    }
+}
+
+.nk__spinner--sm {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-width: 0.3rem;
+}
+
+.nk__spinner--md {
+    height: 3rem;
+    width: 3rem;
+    border-width: 0.5rem;
+}
+
+.nk__spinner--lg {
+    height: 5rem;
+    width: 5rem;
+    border-width: 0.7rem;
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

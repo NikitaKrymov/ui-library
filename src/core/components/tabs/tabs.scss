@@ -1,0 +1,130 @@
+@use "../../scss/mixins/breakpoints.scss" as *;
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__tabs {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    overflow: auto;
+    // Blue Theme
+    &.nk__blue__theme {
+        .nk__tab {
+           color: color(grey, 500);
+           background-color: color(white, base);
+           &:hover {
+               color: color(blue, 800);
+               background-color: color(blue, 100);
+               border-color: color(blue, 800);
+           }
+           &:active {
+               background-color: color(blue, 200);
+           }
+        }
+
+        .nk__tab--active {
+            color: color(blue, 800);
+            border-color: color(blue, 800);
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        .nk__tab {
+           color: color(grey, 500);
+           background-color: color(white, base);
+           &:hover {
+               color: white;
+               background-color: color(purple, 800);
+               border-color: color(purple, 800);
+            }
+        }
+
+        .nk__tab--active {
+            color: color(purple, 800);
+            border-color: color(purple, 800);
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        .nk__tab {
+           color: color(grey, 500);
+           background-color: color(white, base);
+           &:hover {
+               color: white;
+               background-color: color(green, 800);
+               border-color: color(green, 800);
+            }
+        }
+
+        .nk__tab--active {
+            color: color(green, 800);
+            border-color: color(green, 800);
+        }
+    }
+}
+
+.nk__tab {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    // &:focus {
+    //     @include inner-focus;
+    // }
+
+    @include mobile {
+        padding: 0.5rem 1rem 0.3rem 1rem;
+        border-bottom: 2px solid color(grey, 300);
+    }
+
+    @include tablet {
+        padding: 0.7rem 1.2rem 0.5rem 1.2rem;
+        border-bottom: 3px solid color(grey, 300);
+    }
+
+    @include desktop {
+        padding: 1rem 1rem 0.7rem 1rem;
+        border-bottom: 4px solid color(grey, 300);
+    }
+}
+
+.nk__tabs--horizontal {
+    justify-content: center;
+}
+
+.nk__tabs--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .nk__tab {
+        justify-content: flex-start;
+        @include mobile {
+            padding: 0.5rem 1rem 0.3rem 1rem;
+            border-bottom: none;
+            border-left: 2px solid color(grey, 300);
+        }
+        
+        @include tablet {
+            padding: 0.7rem 1.2rem 0.5rem 1.2rem;
+            border-bottom: none;
+            border-left: 3px solid color(grey, 300);
+        }
+        
+        @include desktop {
+            padding: 1rem 1rem 0.7rem 1rem;
+            border-bottom: none;
+            border-left: 4px solid color(grey, 300);
+        }
+    }
+}

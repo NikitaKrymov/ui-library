@@ -1,0 +1,124 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__dropdown {
+    @include shadow-elegant;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 100%; 
+    
+    button { 
+        display: flex;
+        padding: 0.5rem;
+        border-radius: 2px;
+        width: 100%;
+        background-color: color(white, base);
+        outline: none;
+        border: none;
+        color: color(grey, 700);
+        justify-content: flex-start;
+        &:hover {
+            cursor: pointer;
+        }
+        // &:focus {
+        //     @include inner-focus;
+        // }
+    }
+
+
+    //Blue Theme
+    &.nk__blue__theme {
+        button {
+            &:hover {
+                color: color(white, base);
+                background-color: color(blue, 700);
+            }
+            &:active {
+                color: color(white, base);
+                background-color: color(blue, 800);
+            }
+        }
+        &.nk__dropdown--primary {
+            .nk__dropdown__button {
+                background-color: color(blue, 700);
+                color: color(white, base);
+                &:hover {
+                    background-color: color(blue, 600);
+                }
+                &:active {
+                    background-color: color(blue, 700);
+                }
+            }
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        button {
+            &:hover {
+                color: color(white, base);
+                background-color: color(purple, 700);
+            }
+            &:active {
+                color: color(white, base);
+                background-color: color(purple, 800);
+            }
+        }
+        &.nk__dropdown--primary {
+            .nk__dropdown__button {
+                background-color: color(purple, 700);
+                color: color(white, base);
+                &:hover {
+                    background-color: color(purple, 600);
+                }
+                &:active {
+                    background-color: color(purple, 700);
+                }
+            }
+        }
+    }
+
+    // Green Theme 
+    &.nk__green__theme {
+        button {
+            &:hover {
+                color: color(white, base);
+                background-color: color(green, 700);
+            }
+            &:active {
+                color: color(white, base);
+                background-color: color(green, 800);
+            }
+        }
+        &.nk__dropdown--primary {
+            .nk__dropdown__button {
+                background-color: color(green, 700);
+                color: color(white, base);
+                &:hover {
+                    background-color: color(green, 600);
+                }
+                &:active {
+                    background-color: color(green, 700);
+                }
+            }
+        }
+    }
+}
+
+
+.nk__dropdown__content {
+    @include shadow-bottom;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    &[aria-expanded="true"] {
+        display: flex;
+    }
+}
+

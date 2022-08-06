@@ -1,0 +1,66 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__donut {
+    position: relative;
+	width: 200px;
+    height: 200px;
+	margin: 0 auto 2rem;
+	border-radius: 100%
+}
+
+.nk__donut__sector {
+    border-radius: 50%;
+    clip: rect(0px, 200px, 200px, 100px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    > div {
+        border-radius: 50%;
+        clip: rect(0px, 100px, 200px, 0px);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        font-family: monospace;
+        font-size: 1.5rem;
+    }
+
+}
+
+.nk__chart {
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 30rem;
+    background-position: left top;
+    border-collapse: collapse;
+    background: repeating-linear-gradient(to top, grey 1px, transparent 1%, transparent 3rem);
+
+    div {
+        position: relative;
+        display: table-cell;
+        vertical-align: bottom;
+        height: 10rem;
+    }
+    span {
+        margin: 0 1rem;
+        display: flex;
+        background: rgba(#d1ecfa, .75);
+        animation: draw 1s ease-in-out;
+        
+        &:before{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            content: attr(title);
+            word-wrap: break-word;
+        }
+        
+    }
+}

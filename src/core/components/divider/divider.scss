@@ -1,0 +1,15 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__divider {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-color: color(grey, 100);
+}
+
+.nk__divider__horizontal {
+    width: 100%;
+}
+
+.nk__divider__vertical {
+
+}

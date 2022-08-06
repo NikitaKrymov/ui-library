@@ -1,0 +1,120 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__button {
+    @include shadow-elegant;
+    padding: 1rem;
+    text-decoration: none; 
+    outline: none; 
+    display: flex;
+    justify-content: center;
+    border: 1px solid transparent;
+    align-items: center;
+    border-radius: 0.25rem;
+    position: relative;
+    width: auto;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        @include focus;
+    }
+}
+
+.nk__button--sm {
+    height: 2rem;
+}
+
+.nk__button--md {
+    height: 2.5rem;
+}
+
+.nk__button--lg {
+    height: 3rem;
+}
+
+.nk__button--primary {
+    // Blue Theme
+    &.nk__blue__theme {
+        color: color(white, base);
+        background-color: color(blue, 700);
+        &:hover {
+            color: color(blue, 700);
+            background-color: color(blue, 100);
+        }
+        &:active {
+            background-color: color(blue, 200);
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        color: color(white, base);
+        background-color: color(purple, 700);
+        &:hover {
+            color: color(purple, 700);
+            background-color: color(purple, 100);
+        }
+        &:active {
+            background-color: color(purple, 200);
+        }
+    }
+
+    //Green Theme
+    &.nk__green__theme {
+        color: color(white, base);
+        background-color: color(green, 700);
+        &:hover {
+            color: color(white, base);
+            background-color: color(green, 800);
+        }
+        &:active {
+            background-color: color(green, 200);
+        }
+    }
+}
+
+.nk__button--secondary {
+    // Blue Theme
+    &.nk__blue__theme {
+        color: color(blue, 800);
+        background-color: color(white, base);
+        &:hover {
+            color: color(blue, 800);
+            background-color: color(blue, 100);
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        color: color(purple, 800);
+        background-color: color(purple, 100);
+        &:hover {
+            color: color(purple, 800);
+            background-color: color(purple, 200);
+        }
+    }
+
+    //Green Theme
+    &.nk__green__theme {
+        color: color(green, 800);
+        background-color: color(green, 100);
+        &:hover {
+            color: color(green, 800);
+            background-color: color(green, 200);
+        }
+    }
+}
+
+.nk__button {
+    &:disabled {
+        background-color: color(grey, 200);
+        cursor: not-allowed;
+        color: color(grey, 400);
+        &:hover {
+            color: color(grey, 400);
+            background-color: color(grey, 200);
+        }
+    }
+}

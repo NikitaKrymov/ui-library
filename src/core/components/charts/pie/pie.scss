@@ -1,0 +1,82 @@
+.nk__chart__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nk__pie__canvas {
+    border: 1px solid grey;;
+}
+
+.nk__chart__pie {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.nk__chart__pie__layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 7.5rem;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+
+.nk__chart__pie__layer{
+    span {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-origin: 0 7.5rem;
+        background-color: transparent;
+        top: 0;
+        left: 0;
+    }
+}
+
+.nk__chart__pie__legend {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    > * {
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        span {
+            margin-right: 0.5rem;
+            border-radius: 50%; 
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+}
+
+// .nk__chart__pie__layer:nth-child(1) {
+//     z-index: 10;
+//     background-color: black;
+//     transform: translateX(7.5rem) rotate(90deg);
+// }
+
+// .nk__chart__pie__layer:nth-child(2) {
+//     background-color: red;
+//     transform: translateX(7.5rem) rotate(150deg);
+// }
+
+// .nk__chart__pie__layer:nth-child(3) {
+//     background-color: yellow;
+//     transform: translateX(7.5rem) rotate(270deg);
+// }

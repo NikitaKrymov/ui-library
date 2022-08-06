@@ -1,0 +1,125 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__tag {
+    display: flex;
+    border: 1px solid;
+    border-radius: 2rem;
+    button {
+       width: 100%; 
+       background-color: transparent;
+       border: none;
+       outline: none;
+       border-top-left-radius: 2rem;
+       border-bottom-left-radius: 2rem;
+    }
+
+    :last-child {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-right: 0.5rem;
+    }
+
+    :hover {
+        cursor: pointer;
+    }
+
+    // button {
+    //     &:focus {
+    //         @include focus-bottom;
+    //     }
+
+    // }
+    // :last-child {
+    //     &:focus {
+    //         @include focus-bottom;
+    //     }
+    // }
+
+    // Blue Theme
+    &.nk__blue__theme {
+        border: none;
+        background-color: color(blue, 100);
+        button {
+            color: color(blue, 500);
+            &:hover {
+                background-color: color(blue, 200);
+            }
+        }
+        :last-child {
+            font-size: 0.6rem;
+            &:hover {
+                background-color: color(blue, 200);
+            }
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        border-color: color(purple, 700);
+        background-color: color(purple, 100);
+        button {
+            color: color(purple, 500);
+            &:hover {
+                background-color: color(purple, 200);
+            }
+        }
+        :last-child {
+            font-size: 0.6rem;
+            &:hover {
+                background-color: color(purple, 200);
+            }
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        border-color: color(green, 700);
+        background-color: color(green, 100);
+        button {
+            color: color(green, 500);
+            &:hover {
+                background-color: color(green, 200);
+            }
+        }
+        :last-child {
+            font-size: 0.6rem;
+            &:hover {
+                background-color: color(green, 200);
+            }
+        }
+    }
+}
+
+.nk__tag--sm {
+    button {
+        padding: 0.2rem 0.7rem;
+    }
+    :last-child {
+        padding-left: 0.35rem;
+    }
+}
+
+.nk__tag--md {
+    :last-child {
+        padding-left: 0.5rem;
+    }
+    button {
+        padding: 0.4rem 1rem;
+
+    }
+}
+
+.nk__tag--lg {
+    button {
+        padding: 0.6rem 1.3rem;
+    }
+    :last-child {
+        padding-left: 0.65rem;
+    }
+}

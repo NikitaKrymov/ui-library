@@ -1,0 +1,232 @@
+@use "../../scss/color-palette.scss" as *;
+
+.nk__progress-tracker__step__marker {
+    position: relative;
+    &::before {
+        content: "";
+        z-index: 3;
+        display: flex;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background-color: color(white, base); 
+        border: 2px solid color(grey, 200);
+    }
+    &::after {
+        content: "";
+        z-index: 2;
+        display: block;
+        width: 100%;
+        position: absolute;
+        background-color: color(grey, 200);
+        height: 4px;
+        right: 0;
+        top: 44%;
+    }
+}
+
+
+.nk__progress-tracker {
+    display: flex;
+    width: 100%;
+    // Aligns
+    &.nk__progress-tracker--start{
+        .nk__progress-tracker__step__title {
+            display: flex;
+            align-items: flex-start;
+        }
+        .nk__progress-tracker__step__marker {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .nk__progress-tracker__step {
+            .nk__progress-tracker__step__marker {
+                &::after {
+                    left: -100%;
+                }
+            }
+        }
+    }
+
+    &.nk__progress-tracker--center {
+        .nk__progress-tracker__step__title {
+            display: flex;
+            align-items: center;
+        }
+        .nk__progress-tracker__step__marker {
+            display: flex;
+            justify-content: center;
+        }
+        .nk__progress-tracker__step__marker {
+            &::before {
+                margin: 0 auto;
+            }
+        }
+        .nk__progress-tracker__step {
+            .nk__progress-tracker__step__marker {
+                &:after {
+                    right: 50%;
+                }
+            }
+        }
+    }
+    
+    &.nk__progress-tracker--end{
+        .nk__progress-tracker__step__title {
+            display: flex;
+            align-items: flex-end;
+        }
+        .nk__progress-tracker__step__marker {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .nk__progress-tracker__step {
+            .nk__progress-tracker__step__marker {
+                &::after{
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .nk__progress-tracker__step {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    // Blue Theme
+    &.nk__blue__theme {
+        .nk__progress-tracker__step {
+            &.nk__progress-tracker__step--completed {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(blue, 700);
+                        border-color: color(blue, 700);
+                    }
+                    &::after {
+                        background-color: color(blue, 700);
+                    }
+                }
+            }
+            &:first-child {
+                .nk__progress-tracker__step__marker {
+                    &::after {
+                        background-color: transparent;
+                    }
+                }
+            }
+            
+            &.nk__progress-tracker__step--current {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(blue, 400);
+                        border-color: color(blue, 400);
+                    }
+                }
+            }
+
+            &:hover {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(blue, 300);
+                        border-color: color(blue, 300);
+                    }
+                }
+            }
+        }
+    }
+
+    //Purple Theme 
+    &.nk__purple__theme {
+        .nk__progress-tracker__step {
+            
+            &.nk__progress-tracker__step--completed {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(purple, 700);
+                        border-color: color(purple, 700);
+                    }
+                }
+            }
+            
+            &.nk__progress-tracker__step--current {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(purple, 500);
+                        border-color: color(purple, 500);
+                    }
+                }
+            }
+            
+            &:hover {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(purple, 300);
+                        border-color: color(purple, 300);
+                    }
+                }
+            }
+        }
+    }
+
+    //Purple Theme 
+    &.nk__green__theme {
+        .nk__progress-tracker__step {
+            
+            &.nk__progress-tracker__step--completed {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(green, 700);
+                        border-color: color(green, 700);
+                    }
+                }
+            }
+            
+            &.nk__progress-tracker__step--current {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(green, 500);
+                        border-color: color(green, 500);
+                    }
+                }
+            }
+
+            &:hover {
+                .nk__progress-tracker__step__marker {
+                    &::before {
+                        background-color: color(green, 300);
+                        border-color: color(green, 300);
+                    }
+                }
+            }
+        }
+    }
+
+    &.nk__progress-tracker__step--invalid {
+        .nk__progress-tracker__step__marker {
+            &::before {
+                background-color: red;
+            }
+        }
+    }
+}
+
+.nk__progress-tracker__step {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nk__progress-tracker__step__title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: color(grey, 700);
+}
+
+.nk__progress-tracker__step__head {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}

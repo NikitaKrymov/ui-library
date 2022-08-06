@@ -1,0 +1,38 @@
+@use "../../scss/mixins/shadow.scss" as *;
+@use "../../scss/color-palette.scss" as *;
+
+.nk__action__menu {
+    @include shadow-elegant;
+    position: absolute;
+    padding: 0.7rem;
+    border-radius: 4px;
+    background-color: color(white, base);
+    display: none;
+    &[aria-expanded="true"] {
+        display: flex;
+    }
+    color: color(grey, 600);
+    z-index: 10;
+}
+
+.nk__action__menu--left {
+    top: 0;
+    right: 100%;
+    margin-right: 0.5rem;
+}
+
+.nk__action__menu--right {
+    top: 0;
+    left: 100%;
+    margin-left: 0.5rem;
+}
+
+.nk__action__menu--top {
+    bottom: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.nk__action__menu--bottom {
+    top: 100%;
+    margin-top: 0.5rem;
+}

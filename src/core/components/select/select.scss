@@ -1,0 +1,125 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+.nk__select {
+    label {
+        margin-bottom: 0.2rem;
+        color: color(grey, 700);
+    }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &.nk__select--sm {
+        select {
+            padding: 0.2rem 0.5rem;
+        }
+    }
+
+    &.nk__select--md {
+        select {
+            padding: 0.5rem 0.5rem;
+        }
+    }
+
+    &.nk__select--lg {
+        select {
+            padding: 0.7rem 0.5rem;
+        }
+    }
+
+    select {
+        outline: none;
+        border-radius: 0.25rem;
+        border: 1px solid color(grey, 500);
+        color: color(grey, 700);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        // &:focus {
+        //     @include inner-focus;
+        // }
+
+        // Blue Theme 
+        &.nk__blue__theme {
+            background-color: color(white, base);
+
+            &:hover,
+            &:active {
+                color: color(blue, 600);
+                border-color: color(blue, 500);
+            }
+        }
+
+        // Purple Theme 
+        &.nk__purple__theme {
+            background-color: color(white, base);
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: color(purple, 600);
+                border-color: color(purple, 500);
+            }
+        }
+
+        // Green Theme 
+        &.nk__green__theme {
+            background-color: color(white, base);
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: color(green, 700);
+                border-color: color(green, 700);
+            }
+        }
+    }
+
+    .nk__select--secondary {
+        color: color(white, base);
+        // Blue Theme 
+        &.nk__blue__theme {
+            background-color: color(blue, 700);
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-color: color(blue, 700);
+                background-color: color(blue, 200);
+            }
+        }
+
+        // Purple Theme 
+        &.nk__purple__theme {
+            background-color: color(purple, 700);
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-color: color(purple, 700);
+                background-color: color(purple, 200);
+            }
+        }
+
+        // Green Theme 
+        &.nk__green__theme {
+            background-color: color(green, 700);
+            border-color: color(green, 800);
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-color: color(green, 700);
+                background-color: color(green, 200);
+            }
+        }
+    }
+}
+
+
+.nk__select__helper-text {
+    margin-top: 0.2rem;
+    color: color(grey, 500);
+}

@@ -1,0 +1,98 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+
+.nk__section__wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    @include shadow-elegant;
+
+    // Blue Theme
+    &.nk__blue__theme {
+        .nk__section-selector__item {
+            border-color: color(blue, 700);
+            background-color: color(blue, 700);
+            color: color(grey, 100);
+            &:hover {
+                background-color: color(blue, 600);
+            }
+        }
+        .nk__section-selector__item--active {
+            color: color(grey, 800);
+            background-color: white;
+            &:hover {
+                background-color: color(white, base);
+            }
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        .nk__section-selector__item {
+            background-color: color(purple, 700);
+            border-color: color(purple, 700);
+            color: color(grey, 100);
+            &:hover {
+                background-color: color(purple, 600);
+            }
+        }
+        .nk__section-selector__item--active {
+            color: color(grey, 800);
+            background-color: white;
+            &:hover {
+                background-color: color(white, base);
+            }
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        .nk__section-selector__item {
+            background-color: color(green, 800);
+            border-color: color(green, 700);
+            color: color(grey, 100);
+            &:hover {
+                background-color: color(green, 600);
+            }
+        }
+        .nk__section-selector__item--active {
+            color: color(grey, 800);
+            background-color: white;
+            &:hover {
+                background-color: color(white, base);
+            }
+        }
+    }
+}
+
+.nk__section-selector {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nk__section-selector__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    padding: 1rem;
+    text-transform: uppercase;
+    &:hover {
+        cursor: pointer;
+    }
+    &:first-child {
+        border-top-left-radius: 0.5rem;
+    }
+
+    &:last-child {
+        border-top-right-radius: 0.5rem;
+    }
+}
+
+.nk__section {
+    display: flex;
+    min-height: 3rem;
+    padding: 0.5rem;
+}

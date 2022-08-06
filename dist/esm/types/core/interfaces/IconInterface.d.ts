@@ -1,0 +1,18 @@
+declare const SETTINGS_BOLD = "settingsBold";
+declare const SETTINGS_THIN = "settingsThin";
+declare const COMPONENT = "component";
+declare const PLUS = "plus";
+declare const MINUS = "minus";
+declare const ARROW_DOWN = "arrowDown";
+declare const ARROW_UP = "arrowUp";
+declare const CLOSE = "close";
+declare const SHOW = "show";
+declare const HIDE = "hide";
+declare const DESKTOP = "desktop";
+declare const TABLET = "tablet";
+declare const MOBILE = "mobile";
+declare const CLOCK = "clock";
+declare const CALENDAR = "calendar";
+declare const DONE = "done";
+export declare type Icons = typeof SETTINGS_BOLD | typeof SETTINGS_THIN | typeof COMPONENT | typeof PLUS | typeof MINUS | typeof ARROW_DOWN | typeof ARROW_UP | typeof CLOSE | typeof SHOW | typeof HIDE | typeof MOBILE | typeof DESKTOP | typeof TABLET | typeof CLOCK | typeof CALENDAR | typeof DONE;
+export {};

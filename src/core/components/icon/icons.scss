@@ -1,0 +1,136 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/animations/rotate.scss" as *;
+@use "../../scss/mixins/focus.scss" as *;
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../../fonts/icomoon.eot?rvev0j');
+    src:  url('../../fonts/icomoon.eot?rvev0j#iefix') format('embedded-opentype'),
+      url('../../fonts/icomoon.ttf?rvev0j') format('truetype'),
+      url('../../fonts/icomoon.woff?rvev0j') format('woff'),
+      url('../../fonts/icomoon.svg?rvev0j#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  .nk__icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1;
+    fill: color(grey, 500);
+    path:hover {
+      cursor: pointer;
+    }
+
+    // &:focus{
+    //   @include focus;
+    // }
+    
+    // Blue Theme 
+    // &.nk__blue__theme {
+    //     path:hover {
+    //        fill: color(blue, 500);
+    //     }
+    // }
+    
+    // // Purple Theme 
+    // &.nk__purple__theme {
+    //     path:hover {
+    //        fill: color(purple, 500);
+    //     }
+    // }
+    
+    // // Green Theme 
+    // &.nk__green__theme {
+    //     path:hover {
+    //        fill: color(green, 600);
+    //     }
+    // }
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .nk__icon__plus:before {
+    content: "\e900";
+  }
+  .nk__icon__minus:before {
+    content: "\e901";
+  }
+  .nk__icon__menu:before {
+    content: "\e902";
+  }
+  .nk__icon__settings-bold:before {
+    content: "\e903";
+  }
+  .nk__icon__arrow-down:before {
+    content: "\e904";
+  }
+  .nk__icon__arrow-up:before {
+    content: "\e905";
+  }
+  .nk__icon__phone:before {
+    content: "\e906";
+  }
+  .nk__icon__close:before {
+    content: "\e907";
+  }
+  .nk__icon__checklist-done:before {
+    content: "\e908";
+  }
+  .nk__icon__accept:before {
+    content: "\e909";
+  }
+  .nk__icon__exit:before {
+    content: "\e90a";
+  }
+  .nk__icon__four__squares:before {
+    content: "\e90b";
+  }
+  .nk__icon__filter:before {
+    content: "\e90c";
+  }
+  .nk__icon__chip:before {
+    content: "\e90d";
+  }
+  .nk__icon__feedback:before {
+    content: "\e90e";
+  }
+  .nk__icon__component:before {
+    content: "\e90f";
+  }
+  .nk__icon__components:before {
+    content: "\e910";
+  }
+  .nk__icon__settings-thin:before {
+    content: "\e911";
+  }
+  .nk__icon__done:before {
+    content: "\e912";
+  }
+  .nk__icon__view-show:before {
+    content: "\e914";
+  }
+  .nk__icon__view-hide:before {
+    content: "\e913";
+  }
+  .nk__icon__desktop:before {
+    content: "\e915";
+  }
+  .nk__icon__mobile:before {
+    content: "\e917";
+  }
+  .nk__icon__tablet:before {
+    content: "\e916";
+  }
+  .nk__icon-clock:before {
+    content: "\e919";
+  }
+  .nk__icon-calendar:before {
+    content: "\e918";
+  }

@@ -1,0 +1,123 @@
+@use "../../../scss/color-palette.scss" as *;
+@use "../../../scss/mixins/breakpoints.scss" as *;
+
+.nk__chart__bar__container {
+    border-bottom: 1px solid color(grey, 500);
+    border-left: 1px solid color(grey, 500);;
+    display: table;
+    width: 100%;
+    position: relative;
+    overflow-x: scroll;
+    margin-left: 4rem;
+    @include mobile {
+        margin-left: unset;
+    }
+    span {
+        position: relative;
+        margin: 0 1rem;
+        display: flex;
+        animation: grow 0.7s linear;
+
+        @keyframes grow {
+            from {
+                height: 0;
+            }
+        }
+        @include mobile {
+            margin: 0 0.2rem;
+        }
+
+        &:after {
+            font-size: 0.7rem;
+            position: absolute;
+            color: color(grey, 900);
+            top: -1rem;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            content: attr(data-value);
+            word-wrap: break-word;
+        }
+        
+        &:before{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            content: attr(data-title);
+            word-wrap: break-word;
+            @include mobile {
+                transform: rotate(-90deg);
+                top: 100%;
+            }
+        }
+        
+    }
+
+    // Blue Theme
+    &.nk__blue__theme {
+        span {
+            background: color(blue, 300);
+            &:hover {
+                cursor: pointer;
+                background-color: color(blue, 400);
+            }
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        span {
+            background: color(purple, 300);
+            &:hover {
+                cursor: pointer;
+                background-color: color(purple, 400);
+            }
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        span {
+            background: color(green, 600);
+            &:hover {
+                cursor: pointer;
+                background-color: color(green, 700);
+            }
+        }
+    }
+}
+
+.nk__chart__bar__ticks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    > div {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-top: 1px dotted grey;
+        &::before {
+            color: color(grey, 900);
+            display: block;
+            position: absolute;
+            content: attr(data-value);
+            right: calc(100% + 0.5rem);
+            top: -0.5rem;
+            max-width: 4rem;
+        }
+    }
+}
+
+.nk__chart__bar {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 10rem;
+}

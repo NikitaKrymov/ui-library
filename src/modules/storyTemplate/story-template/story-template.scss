@@ -1,0 +1,235 @@
+@use "../../../core/scss/color-palette.scss" as *;
+@use "../../../core/scss/mixins/focus.scss" as *;
+
+.nk__ui-lib__story {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.nk__ui-lib__story__header {
+    display: flex;
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.nk__ui-lib__story__codebox {
+    color: color(grey, 500);
+    align-items: flex-start;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    justify-content: flex-start;
+    background-color: color(grey, 100);
+    padding: 0 1rem;
+    position: relative;
+    width: 100%;
+    pre {
+        overflow-wrap: break-word;
+    }
+}
+
+.nk__ui-lib__story__codebox__copy-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    color: color(grey, 800);
+    background-color: color(white, base);
+    border-bottom: 1px solid color(grey, 100);
+    border-right: 1px solid color(grey, 100);
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    outline: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        @include inner-focus;
+    }
+    &.nk__ui-lib__story__codebox__copy-button--activated {
+        //Blue Theme
+        &.nk__blue__theme {
+            color: color(white, base);
+            background-color: color(blue, 600);
+        }
+
+        //Purple Theme
+        &.nk__purple__theme {
+            color: color(white, base);
+            background-color: color(purple, 600);
+        }
+
+        //Green Theme
+        &.nk__green__theme{
+            color: color(white, base);
+            background-color: color(green, 600);
+        }
+    }
+}
+
+
+.nk__ui-lib__story__viewbox__control {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+}
+
+.nk__ui-lib__story__viewbox__title {
+    position: absolute;
+    font-size: 1.4rem;
+    color: color(grey, 600);
+    top: 0.2rem;
+    left: 0.2rem;
+    text-transform: uppercase;
+}
+
+.nk__ui-lib__story__description {
+    display: flex;
+    text-align: left;
+    color: color(grey, 600);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.nk__ui-lib__story__headline {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: color(grey, 800);
+}
+
+.nk__ui-lib__story__block {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.nk__ui-lib__story__block__title {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: color(grey, 600);
+    text-transform: uppercase;
+}
+
+.nk__ui-lib__story__block__behavior {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.nk__ui-lib__story__block__behavior__attrs {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    color: color(grey, 800);
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid color(grey, 100);
+    :last-child {
+        margin-left: 0.5rem;
+    }
+}
+.nk__ui-lib__story__block__behavior__row {
+    :last-child {
+        margin-left: 0.5rem;
+    }
+}
+
+.nk__ui-lib__story__viewbox__control-box {
+    display: flex;
+    flex-direction: column;
+    > * {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.nk__ui-lib__story__viewbox__control-box__title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: color(grey, 500);
+}
+
+.nk__ui-lib__story__viewbox__container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+    padding: 1.5rem 0 1rem 0;
+}
+
+.nk__ui-lib__story__viewbox__display {
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    height: calc(100% - 1rem);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    padding: 0.5rem;
+    background: transparent;
+    &.nk__ui-lib__story__viewbox__display--desktop {
+        width: 100%;
+        border: 5px solid color(gray, 800);
+    }
+    &.nk__ui-lib__story__viewbox__display--tablet {
+        width: 384px;
+        border: 2px solid color(gray, 800);
+    }
+    &.nk__ui-lib__story__viewbox__display--mobile {
+        width: 190px;
+        border: 2px solid color(gray, 800);
+    }
+}
+
+.nk__ui-lib__story__viewbox__display-control {
+    z-index: 10;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 1%;
+    display: flex;
+    bottom: 1%;
+    div {
+        padding: 0.2rem;
+        i {
+            font-size: 0.9rem !important;
+            padding: 0.2rem;
+            border-radius: 4px;
+        }
+        :hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
+    .nk__ui-lib__story__viewbox__display-control--active {
+        i {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            color: color(blue, 500);
+        }
+        &::before {
+            content: attr(data-label);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: color(gray, 500);
+            margin-right: 0.2rem;
+            right: 100%;
+            text-transform: uppercase;
+        }
+    }
+}

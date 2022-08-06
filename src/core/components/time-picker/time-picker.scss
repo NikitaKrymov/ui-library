@@ -1,0 +1,73 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+
+.nk__time-picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.nk__time-picker__header {
+    border-top-left-radius: 0.5rem;
+    display: grid;
+    height: 2rem;
+    border-top-right-radius: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: color(blue, 300);
+    span {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+}
+
+.nk__time-picker__container {
+    background-color: color(white, base);
+    @include shadow-elegant;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 16rem;
+}
+
+.nk__time-picker__hours,
+.nk__time-picker__minutes,
+.nk__time-picker__day-frames {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 12rem;
+    overflow-y: scroll;
+    padding: 0.2rem 0 0.5rem 0;
+    button {
+        @include shadow-elegant;
+        border-radius: 0.5rem;
+        background-color: color(white, base);
+        border: none;
+        padding: 0.5rem 1rem;
+        margin-top: 0.3rem;
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover {
+            background-color: color(blue, 100);
+        }
+    }
+    .nk__time-picker__hours__hour--selected,
+    .nk__time-picker__minutes__minute--selected,
+    .nk__time-picker__day-frames__day-frame--selected {
+        background-color: color(blue, 300);
+        &:hover {
+            background-color: color(blue, 300);
+        }
+    }
+}
+
+.nk__time-picker__day-frames {
+    justify-content: center;
+    margin: 0 1rem;
+}

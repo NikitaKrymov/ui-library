@@ -1,0 +1,16 @@
+@use "../color-palette.scss" as *;
+
+@mixin inner-focus {
+    outline: 2px solid color(blue, 700);
+    outline-offset: -2px;
+    border-radius: 2px;
+}
+
+@mixin focus {
+    outline: 2px solid color(blue, 700);
+    outline-offset: 0.1rem;
+}
+
+@mixin focus-bottom {
+    border-bottom: 2px solid color(blue, 700);
+}

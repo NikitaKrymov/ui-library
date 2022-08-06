@@ -1,0 +1,102 @@
+@use "../../scss/color-palette.scss" as *;
+@use "../../scss/mixins/shadow.scss" as *;
+
+.nk__card {
+    @include shadow-elegant;
+    display: flex;
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
+    color: color(white, base);
+
+    // Blue Theme
+    &.nk__blue__theme {
+        background-color: color(blue, 800);
+        &.nk__card--primary {
+            background-color: color(white, base);
+            color: color(black, base);
+            .nk__card__title {
+                color: color(black, base) !important;
+            }
+        }
+    }
+
+    // Purple Theme
+    &.nk__purple__theme {
+        background-color: color(purple, 700);
+        &.nk__card--primary {
+            background-color: color(purple, 100);
+            color: color(black, base);
+            .nk__card__title {
+                color: color(black, base) !important;
+            }
+        }
+    }
+
+    // Green Theme
+    &.nk__green__theme {
+        background-color: color(green, 700);
+        &.nk__card--primary {
+            background-color: color(green, 400);
+            color: color(black, base);
+            .nk__card__title {
+                color: color(black, base) !important;
+            }
+        }
+    }
+}
+
+.nk__card__title {
+    margin: 1.5rem;
+}
+
+.nk__card__text {
+    margin: 1.5rem;
+}
+
+.nk__card--vertical {
+    flex-direction: column;
+}
+
+.nk__card--horizontal {
+    flex-direction: row;
+}
+
+.nk__flip-card__inner-wrapper {
+    display: flex;
+    position: relative;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+}
+
+.nk__flip-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.nk__flip-card:hover .nk__flip-card__inner-wrapper {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.nk__flip-card--front,
+.nk__flip-card--back {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.nk__flip-card--back {
+    position: absolute;
+}
+
+.nk__flip-card--back {
+    transform: rotateY(180deg);
+}
